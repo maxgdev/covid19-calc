@@ -3,10 +3,6 @@ import MyAppBar from './AppBar'
 import Footer from './Footer'
 import ValidationTextFields from './TextField'
 
-
-
-import './App.css';
-
 function App() {
   return (
     <div className="App">

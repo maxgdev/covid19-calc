@@ -9,14 +9,13 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SimpleBottomNavigation() {
+export default function Footer() {
   const classes = useStyles();
 
   return (
     <BottomNavigation
       className={classes.root}
-    >
-        <Typography va>© maxgdev.net 2020</Typography>
+    ><h6>© maxgdev.net 2020</h6>
     </BottomNavigation>
   );
 }

@@ -28,7 +28,7 @@ export default function FormPropsTextFields() {
     <Grid alignContent ='center' container spacing={3}>
     <Grid item xs={12}>
         <Paper className={classes.paper}>
-          <Typography variant=''>
+          <Typography>
             Enter values to explore the death rate (mortality) COVID-19
           </Typography>
         </Paper>

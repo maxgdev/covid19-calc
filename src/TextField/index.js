@@ -120,7 +120,7 @@ export default function FormInputs() {
         </form>
         </Paper>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} sm={12}>
         <Paper className={classes.paper}>
             <Typography variant='h4'>Estimated Infections:</Typography>
             <Typography variant='h4'>

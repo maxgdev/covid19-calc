@@ -4,7 +4,9 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 
 const useStyles = makeStyles({
   root: {
-    // width: 500,
+    width: '100%',
+    position: 'fixed',
+    bottom: 0,
   },
 });
 
@@ -14,7 +16,7 @@ export default function Footer() {
   return (
     <BottomNavigation
       className={classes.root}
-    ><h6>©maxgdev.net 2020</h6>
+    ><p>©maxgdev.net 2020</p>
     </BottomNavigation>
   );
 }

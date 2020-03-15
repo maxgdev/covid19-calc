@@ -9,7 +9,8 @@ import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 
 const styles = theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+
   },
   flex: {
     flex: 1
@@ -36,7 +37,7 @@ const MyAppBar = withStyles(styles)(({ classes }) => (
           color="inherit"
           className={classes.flex}
         >
-          COVID-19 Mortality Calculator
+          COVID-19 Calculator
         </Typography>
       </Toolbar>
     </AppBar>

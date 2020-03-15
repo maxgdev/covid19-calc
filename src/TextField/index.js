@@ -42,7 +42,7 @@ export default function FormInputs() {
  
   return (
     <div className={classes.root}>
-    <Grid alignContent ='center' container spacing={3}>
+    <Grid justify='center' container spacing={3}>
     <Grid item xs={12}>
         <Paper className={classes.paper}>
           <Typography variant='h4'>

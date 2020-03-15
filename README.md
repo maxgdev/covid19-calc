@@ -17,3 +17,5 @@ A frontend to explore population, infection rates and mortality
 [N.H.S.:](https://www.nhs.uk/)
 
 [Jon Rappaport Blog:](https://nomorefakenews.com/)
+
+[John Hopkins:Coronavirus COVID-19 (SARS-CoV-2)](https://www.hopkinsguides.com/hopkins/view/Johns_Hopkins_ABX_Guide/540747/all/Coronavirus_COVID_19__SARS_CoV_2_)

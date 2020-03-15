@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,8 +21,23 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function FormPropsTextFields() {
+export default function FormInputs() {
   const classes = useStyles();
+  const [population, setPopulation] = useState(63182000);
+  const [infectedPercentage, setInfectedPercentage] = useState(80);
+  const [demographyPercentage, setDemographyPercentage] = useState(18);
+  const [mortality, setMortality] = useState(1);
+  const [deaths, setDeaths] = useState(0);
+
+
+  const calcDeaths = (population, infectedPercentage, demographyPercentage, mortality) => {
+    const deaths = (population * 
+        (infectedPercentage/100) * 
+        (demographyPercentage/100) * 
+        (mortality/100));
+        console.log(deaths);
+    return deaths;  
+  }
 
   return (
     <div className={classes.root}>
@@ -48,7 +64,7 @@ export default function FormPropsTextFields() {
               id="outlined-population"
               label="Population"
               type="number"
-              defaultValue="63000000"
+              defaultValue="63182000"
               InputLabelProps={{
                 shrink: true,
               }}
@@ -94,7 +110,7 @@ export default function FormPropsTextFields() {
       </Grid>
       <Grid item xs={12}>
         <Paper className={classes.paper}>
-          <Typography variant='h5'>Estimated Deaths: 90720</Typography>
+            <Typography variant='h5'>Estimated Deaths: {calcDeaths(population, infectedPercentage, demographyPercentage, mortality)}</Typography>
         </Paper>
       </Grid>
 

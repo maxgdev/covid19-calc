@@ -1,5 +1,6 @@
 # Covid-19 Calculator
 A React App to calculate mortality of covid-19 virus
+
 A frontend to explore population, infection rates and mortality
 
 

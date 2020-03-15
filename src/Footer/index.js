@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 
 const useStyles = makeStyles({
   root: {
@@ -16,7 +17,9 @@ export default function Footer() {
   return (
     <BottomNavigation
       className={classes.root}
-    ><p>©maxgdev.net 2020</p>
+      showLabels
+    >
+    <BottomNavigationAction label="©maxgdev.net 2020" />
     </BottomNavigation>
   );
 }

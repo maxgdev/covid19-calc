@@ -68,7 +68,6 @@ export default function FormInputs() {
               id="outlined-population"
               label="Population"
               type="number"
-              defaultValue="63182000"
               value={population}
               onChange={element => setPopulation(element.target.value)}
               InputLabelProps={{
@@ -81,7 +80,6 @@ export default function FormInputs() {
               id="outlined-infectedPercent"
               label="% Infected"
               type="number"
-              defaultValue="60"
               value={infectedPercentage}
               onChange={element => setInfectedPercentage(element.target.value)}
               InputLabelProps={{
@@ -94,7 +92,6 @@ export default function FormInputs() {
               id="outlined-ageDemographicPercent"
               label="% of Demographic"
               type="number"
-              defaultValue="18"
               value={demographyPercentage}
               onChange={element => setDemographyPercentage(element.target.value)}
               InputLabelProps={{
@@ -107,7 +104,6 @@ export default function FormInputs() {
               id="outlined-mortality"
               label="% Mortality"
               type="number"
-              defaultValue="1"
               value={mortality}
               onChange={element => setMortality(element.target.value)}
               InputLabelProps={{
@@ -125,15 +121,16 @@ export default function FormInputs() {
             <Typography variant='h4'>Estimated Infections:</Typography>
             <Typography variant='h4'>
               <Box fontWeight="fontWeightBold" m={1}>
-              {population * (infectedPercentage / 100)}
+              {(population * (infectedPercentage / 100)).toLocaleString()}
               </Box>
             </Typography>
             <Typography variant='h4'>Estimated Deaths:</Typography>
             <Typography variant='h4' color='secondary'>
               <Box fontWeight="fontWeightBold" m={1}>
-              {deaths}
+              {deaths.toLocaleString()}
               </Box>
             </Typography>
+            <br />
         </Paper>
       </Grid>
 

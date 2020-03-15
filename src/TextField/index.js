@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -27,18 +28,18 @@ export default function FormInputs() {
   const [infectedPercentage, setInfectedPercentage] = useState(80);
   const [demographyPercentage, setDemographyPercentage] = useState(18);
   const [mortality, setMortality] = useState(1);
-  const [deaths, setDeaths] = useState(0);
-
+  let deaths = 0;
 
   const calcDeaths = (population, infectedPercentage, demographyPercentage, mortality) => {
     const deaths = (population * 
         (infectedPercentage/100) * 
         (demographyPercentage/100) * 
         (mortality/100));
-        console.log(deaths);
     return deaths;  
   }
-
+ 
+  deaths = parseInt((calcDeaths(population, infectedPercentage, demographyPercentage, mortality)));
+ 
   return (
     <div className={classes.root}>
     <Grid alignContent ='center' container spacing={3}>
@@ -65,6 +66,8 @@ export default function FormInputs() {
               label="Population"
               type="number"
               defaultValue="63182000"
+              value={population}
+              onChange={element => setPopulation(element.target.value)}
               InputLabelProps={{
                 shrink: true,
               }}
@@ -76,6 +79,8 @@ export default function FormInputs() {
               label="% Infected"
               type="number"
               defaultValue="60"
+              value={infectedPercentage}
+              onChange={element => setInfectedPercentage(element.target.value)}
               InputLabelProps={{
                 shrink: true,
               }}
@@ -87,6 +92,8 @@ export default function FormInputs() {
               label="% of Demographic"
               type="number"
               defaultValue="18"
+              value={demographyPercentage}
+              onChange={element => setDemographyPercentage(element.target.value)}
               InputLabelProps={{
                 shrink: true,
               }}
@@ -98,6 +105,8 @@ export default function FormInputs() {
               label="% Mortality"
               type="number"
               defaultValue="1"
+              value={mortality}
+              onChange={element => setMortality(element.target.value)}
               InputLabelProps={{
                 shrink: true,
               }}
@@ -110,7 +119,12 @@ export default function FormInputs() {
       </Grid>
       <Grid item xs={12}>
         <Paper className={classes.paper}>
-            <Typography variant='h5'>Estimated Deaths: {calcDeaths(population, infectedPercentage, demographyPercentage, mortality)}</Typography>
+            <Typography variant='h4'>Estimated Deaths:</Typography>
+            <Typography variant='h4' color='secondary'>
+              <Box fontWeight="fontWeightBold" m={1}>
+              {deaths}
+              </Box>
+            </Typography>
         </Paper>
       </Grid>
 

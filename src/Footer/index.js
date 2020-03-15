@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
-import Typography from '@material-ui/core/Typography'
 
 const useStyles = makeStyles({
   root: {
@@ -15,7 +14,7 @@ export default function Footer() {
   return (
     <BottomNavigation
       className={classes.root}
-    ><h6>© maxgdev.net 2020</h6>
+    ><h6>©maxgdev.net 2020</h6>
     </BottomNavigation>
   );
 }

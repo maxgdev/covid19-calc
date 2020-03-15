@@ -45,8 +45,11 @@ export default function FormInputs() {
     <Grid alignContent ='center' container spacing={3}>
     <Grid item xs={12}>
         <Paper className={classes.paper}>
-          <Typography>
-            Enter values to explore the death rate (mortality) COVID-19
+          <Typography variant='h4'>
+            Enter values to explore the death rate (mortality) of COVID-19
+          </Typography>
+          <Typography variant='h6'>
+          Coronavirus 2019-nCoV / COVID-19 / SARS-CoV-2
           </Typography>
         </Paper>
       </Grid>
@@ -119,6 +122,12 @@ export default function FormInputs() {
       </Grid>
       <Grid item xs={12}>
         <Paper className={classes.paper}>
+            <Typography variant='h4'>Estimated Infections:</Typography>
+            <Typography variant='h4'>
+              <Box fontWeight="fontWeightBold" m={1}>
+              {population * (infectedPercentage / 100)}
+              </Box>
+            </Typography>
             <Typography variant='h4'>Estimated Deaths:</Typography>
             <Typography variant='h4' color='secondary'>
               <Box fontWeight="fontWeightBold" m={1}>

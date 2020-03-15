@@ -5,7 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 
 const styles = theme => ({
   root: {
@@ -22,14 +22,14 @@ const styles = theme => ({
 
 const MyAppBar = withStyles(styles)(({ classes }) => (
   <div className={classes.root}>
-    <AppBar position="fixed">
+    <AppBar position="fixed" color='secondary'>
       <Toolbar>
         <IconButton
           className={classes.menuButton}
           color="inherit"
           aria-label="Menu"
         >
-          <MenuIcon />
+          <LocalHospitalIcon />
         </IconButton>
         <Typography
           variant="h6"

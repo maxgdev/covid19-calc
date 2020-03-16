@@ -30,7 +30,9 @@ export default function FormInputs() {
   const [infectedPercentage, setInfectedPercentage] = useState(80);
   const [demographyPercentage, setDemographyPercentage] = useState(18);
   const [mortality, setMortality] = useState(1);
+  const maxPopulation = 7771907000; // Used for Population input validation
   let deaths = 0;
+  
 
   const calcDeaths = (population, infectedPercentage, demographyPercentage, mortality) => {
     const deaths = (population * 
@@ -47,10 +49,7 @@ export default function FormInputs() {
     setCountry(eventValue)
     const countryObj = countryPopData.find(c => c.country === eventValue)
     setPopulation(countryObj.population);
-    
   };
-  // console.log(country)
-  // console.log("population: "+ population)
 
   return (
     <div className={classes.root}>
@@ -88,6 +87,7 @@ export default function FormInputs() {
               label="Population"
               type="number"
               value={population}
+              error={population > maxPopulation || population < 1}
               onChange={element => setPopulation(element.target.value)}
               InputLabelProps={{
                 shrink: true,
@@ -100,7 +100,9 @@ export default function FormInputs() {
               label="% Infected"
               type="number"
               value={infectedPercentage}
+              error={infectedPercentage > 100 || infectedPercentage <= 0}
               onChange={element => setInfectedPercentage(element.target.value)}
+              
               InputLabelProps={{
                 shrink: true,
               }}
@@ -112,6 +114,7 @@ export default function FormInputs() {
               label="% of Demographic"
               type="number"
               value={demographyPercentage}
+              error={demographyPercentage > 100  || demographyPercentage <= 0}
               onChange={element => setDemographyPercentage(element.target.value)}
               InputLabelProps={{
                 shrink: true,
@@ -124,6 +127,7 @@ export default function FormInputs() {
               label="% Mortality"
               type="number"
               value={mortality}
+              error={mortality > 100 || mortality <= 0}
               onChange={element => setMortality(element.target.value)}
               InputLabelProps={{
                 shrink: true,

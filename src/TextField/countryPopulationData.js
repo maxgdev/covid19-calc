@@ -1,3 +1,5 @@
+// https://stackoverflow.com/questions/39686035/import-json-file-in-react
+
 const countryPopData = [
     {	country	:	"China	",	population	:1401768800},
     {	country	:	"India	",	population	:1359812346},

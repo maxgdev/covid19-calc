@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-
+import countryPopData from './countryPopulationData'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,7 +25,8 @@ const useStyles = makeStyles(theme => ({
 
 export default function FormInputs() {
   const classes = useStyles();
-  const [population, setPopulation] = useState(63182000);
+  const [country, setCountry] = useState('United Kingdom');
+  const [population, setPopulation] = useState(66435600);
   const [infectedPercentage, setInfectedPercentage] = useState(80);
   const [demographyPercentage, setDemographyPercentage] = useState(18);
   const [mortality, setMortality] = useState(1);
@@ -40,6 +42,16 @@ export default function FormInputs() {
  
   deaths = parseInt((calcDeaths(population, infectedPercentage, demographyPercentage, mortality)));
  
+  const onChange = event => {
+    const eventValue = event.target.value
+    setCountry(eventValue)
+    const countryObj = countryPopData.find(c => c.country === eventValue)
+    setPopulation(countryObj.population);
+    
+  };
+  // console.log(country)
+  // console.log("population: "+ population)
+
   return (
     <div className={classes.root}>
     <Grid justify='center' container spacing={3}>
@@ -58,12 +70,19 @@ export default function FormInputs() {
         <form className={classes.root} noValidate autoComplete="off">
           <div>
             <TextField
-  
               id="outlined-country"
+              select
               label="Country"
-              defaultValue="UK"
+              value={country}
               variant="outlined"
-            />
+              onChange={onChange}
+            >
+              {countryPopData.map(option => (
+                <MenuItem key={option.country} value={option.country}>
+                  {option.country}
+                </MenuItem>
+              ))}
+            </TextField>
             <TextField
               id="outlined-population"
               label="Population"

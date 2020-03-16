@@ -118,13 +118,13 @@ export default function FormInputs() {
       </Grid>
       <Grid item xs={12} sm={12}>
         <Paper className={classes.paper}>
-            <Typography variant='h4'>Estimated Infections:</Typography>
+            <Typography variant='h4'>Estimated Infections</Typography>
             <Typography variant='h4'>
               <Box fontWeight="fontWeightBold" m={1}>
               {(population * (infectedPercentage / 100)).toLocaleString()}
               </Box>
             </Typography>
-            <Typography variant='h4'>Estimated Deaths:</Typography>
+            <Typography variant='h4'>Estimated Deaths</Typography>
             <Typography variant='h4' color='secondary'>
               <Box fontWeight="fontWeightBold" m={1}>
               {deaths.toLocaleString()}

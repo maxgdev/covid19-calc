@@ -59,6 +59,10 @@ export default function FormInputs() {
           <Typography variant='h4'>
             Enter values to explore the death rate (mortality) of COVID-19
           </Typography>
+          <Typography variant='h6' color="error">
+          **WARNING: The model is based is on mathematical models which turned out to be fallacious**
+          </Typography>
+          
           <Typography variant='h6'>
           Coronavirus 2019-nCoV / COVID-19 / SARS-CoV-2
           </Typography>

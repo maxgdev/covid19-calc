@@ -3,6 +3,7 @@ A React App to calculate mortality of covid-19 virus
 
 A frontend to explore population, infection rates and mortality
 
+**WARNING: The model is based is on mathematical models which turned out to be fallacious**
 
 
 ### Credits
